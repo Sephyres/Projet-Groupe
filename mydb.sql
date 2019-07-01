@@ -30,13 +30,13 @@ USE `ProjetGroupe`;
 -- Structure de la table `articles`
 --
 
-DROP TABLE IF EXISTS `articles`;
-CREATE TABLE IF NOT EXISTS `articles` (
-  `id_articles` int(11) NOT NULL AUTO_INCREMENT,
+DROP TABLE IF EXISTS `Articles`;
+CREATE TABLE IF NOT EXISTS `Articles` (
+  `idArticle` int(11) NOT NULL AUTO_INCREMENT,
   `titre` varchar(90) NOT NULL,
   `contenu` longtext NOT NULL,
-  `date_article` date NOT NULL,
-  PRIMARY KEY (`id_articles`)
+  `dateArticle` date NOT NULL,
+  PRIMARY KEY (`idArticle`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -45,16 +45,16 @@ CREATE TABLE IF NOT EXISTS `articles` (
 -- Structure de la table `commentaires`
 --
 
-DROP TABLE IF EXISTS `commentaires`;
-CREATE TABLE IF NOT EXISTS `commentaires` (
-  `id_commentaires` int(11) NOT NULL AUTO_INCREMENT,
-  `date` datetime NOT NULL,
+DROP TABLE IF EXISTS `Commentaires`;
+CREATE TABLE IF NOT EXISTS `Commentaires` (
+  `idCommentaire` int(11) NOT NULL AUTO_INCREMENT,
+  `dateCommentaire` datetime NOT NULL,
   `contenu` varchar(300) NOT NULL,
-  `utilisateurs_id_utilisateurs` int(11) NOT NULL,
-  `articles_id_articles` int(11) NOT NULL,
-  PRIMARY KEY (`id_commentaires`),
-  KEY `fk_commentaires_utilisateurs` (`utilisateurs_id_utilisateurs`),
-  KEY `fk_commentaires_articles1` (`articles_id_articles`)
+  `idUtilisateur` int(11) NOT NULL,
+  `idArticle` int(11) NOT NULL,
+  PRIMARY KEY (`idCommentaire`),
+  KEY `idUtilisateur` (`idUtilisateur`),
+  KEY `idArticle` (`idArticle`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -63,14 +63,14 @@ CREATE TABLE IF NOT EXISTS `commentaires` (
 -- Structure de la table `forum`
 --
 
-DROP TABLE IF EXISTS `forum`;
-CREATE TABLE IF NOT EXISTS `forum` (
-  `id_forum` int(11) NOT NULL AUTO_INCREMENT,
-  `date_post` datetime NOT NULL,
+DROP TABLE IF EXISTS `Forum`;
+CREATE TABLE IF NOT EXISTS `Forum` (
+  `idForum` int(11) NOT NULL AUTO_INCREMENT,
+  `datePost` datetime NOT NULL,
   `contenu` longtext NOT NULL,
-  `utilisateurs_id_utilisateurs` int(11) NOT NULL,
-  PRIMARY KEY (`id_forum`),
-  KEY `fk_forum_utilisateurs1` (`utilisateurs_id_utilisateurs`)
+  `idUtilisateur` int(11) NOT NULL,
+  PRIMARY KEY (`idForum`),
+  KEY `idUtilisateur` (`idUtilisateur`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -79,9 +79,9 @@ CREATE TABLE IF NOT EXISTS `forum` (
 -- Structure de la table `utilisateurs`
 --
 
-DROP TABLE IF EXISTS `utilisateurs`;
-CREATE TABLE IF NOT EXISTS `utilisateurs` (
-  `id_utilisateurs` int(11) NOT NULL AUTO_INCREMENT,
+DROP TABLE IF EXISTS `Utilisateurs`;
+CREATE TABLE IF NOT EXISTS `Utilisateurs` (
+  `idUtilisateur` int(11) NOT NULL AUTO_INCREMENT,
   `login` varchar(45) NOT NULL,
   `mdp` varchar(250) NOT NULL,
   `mail` varchar(45) NOT NULL,
@@ -89,7 +89,7 @@ CREATE TABLE IF NOT EXISTS `utilisateurs` (
   `prenom` varchar(45) NOT NULL,
   `role` int(11) NOT NULL,
   `pseudo` varchar(45) NOT NULL,
-  PRIMARY KEY (`id_utilisateurs`)
+  PRIMARY KEY (`idUtilisateur`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -99,15 +99,15 @@ CREATE TABLE IF NOT EXISTS `utilisateurs` (
 --
 -- Contraintes pour la table `commentaires`
 --
-ALTER TABLE `commentaires`
-  ADD CONSTRAINT `fk_commentaires_articles1` FOREIGN KEY (`articles_id_articles`) REFERENCES `articles` (`id_articles`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_commentaires_utilisateurs` FOREIGN KEY (`utilisateurs_id_utilisateurs`) REFERENCES `utilisateurs` (`id_utilisateurs`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `Commentaires`
+  ADD CONSTRAINT `fk_commentaires_articles1` FOREIGN KEY (`idArticle`) REFERENCES `articles` (`idArticle`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_commentaires_utilisateurs` FOREIGN KEY (`idUtilisateur`) REFERENCES `Utilisateurs` (`idUtilisateur`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Contraintes pour la table `forum`
 --
-ALTER TABLE `forum`
-  ADD CONSTRAINT `fk_forum_utilisateurs1` FOREIGN KEY (`utilisateurs_id_utilisateurs`) REFERENCES `utilisateurs` (`id_utilisateurs`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `Forum`
+  ADD CONSTRAINT `fk_forum_utilisateurs1` FOREIGN KEY (`idUtilisateur`) REFERENCES `Utilisateurs` (`idUtilisateur`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
