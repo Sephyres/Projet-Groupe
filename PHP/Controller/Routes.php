@@ -21,10 +21,70 @@ if (isset($_GET['action'])) {
     // En fonction de ce que contient la variable action de $_GET, on ouvre la page correspondante
 
     switch ($_GET['action']) {
-        case 'main': {
-                afficherPage(adresseRoot . 'PHP/View/', 'Main.php', "Page Principale");
-                break;
-            }
+        case 'main': 
+        {
+            afficherPage(adresseRoot . 'PHP/View/', 'Main.php', "Page Principale");
+            break;
+        }
+        case 'connexion':
+        {
+            afficherPage(adresseRoot . 'PHP/View/', 'FormConnexion.php', 'Connexion');
+            break;
+        }
+        case 'connect':
+        {
+            afficherPage(adresseRoot . 'PHP/View/', 'Connexion.php', 'Connexion');
+        }
+        case 'deconnexion':
+        {
+            afficherPage(adresseRoot . 'PHP/View/', 'Deconnexion.php', 'Deconnexion');
+            break;
+        }
+        case 'inscription':
+        {
+            afficherPage(adresseRoot . 'PHP/View/', 'FormInscription.php', 'Inscription');
+            break;
+        }
+        case 'inscript':
+        {
+            afficherPage(adresseRoot . 'PHP/View/', 'Inscription.php', 'Inscription');
+        }
+        case 'forum':
+        {
+            afficherPage(adresseRoot . 'PHP/View/', 'Forum.php', 'Forum');
+            break;
+        }
+        case 'contact':
+        {
+            afficherPage(adresseRoot . 'PHP/View/', 'FormContact.php', 'Contact');
+            break;
+        }
+        case 'mdpOublie':
+        {
+            afficherPage(adresseRoot . 'PHP/View/', 'FormMdpOublie.php', 'Mot de passe oublié');
+            break;
+        }
+        case 'ajouterCommentaire':
+        case 'modifierCommentaire':
+        case 'supprimerCommentaire':
+        {
+            afficherPage(adresseRoot . 'PHP/View/', 'CommentaireAction.php', '');
+            break;
+        }
+        case 'ajouterArticle':
+        case 'modifierArticle':
+        case 'supprimerArticle':
+        {
+            afficherPage(adresseRoot . 'PHP/View/', 'FormArticle.php', "Page Principale");
+            break;
+        }
+        case 'ajtArticle':
+        case 'modifArticle':
+        case 'supprArticle':
+        {
+            afficherPage(adresseRoot . 'PHP/View/', 'ArticleAjout.php', "Page Principale");
+            break;
+        }
     }
 } else { // Sinon, on affiche la page principale du site
     afficherPage(adresseRoot . 'PHP/View/', 'Main.php', "Page Principale");
