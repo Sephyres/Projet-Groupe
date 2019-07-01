@@ -28,7 +28,36 @@
 </head>
 
 <body>
-    <header>
-
-    </header>
     <div id="contener">
+        <header>
+            <div id="log">
+
+                <div id="titre">Les débarquements durant la seconde guerre mondial</div>
+                <div id=login>Login</div>
+
+            </div>
+
+
+            <div id="barre">
+
+                <ul id="nav">
+                    <!--
+            -->
+                    <li><a href="#">Accueil</a></li>
+                    <!--
+            -->
+                    <li><a href="#">Les opérations</a></li>
+                    <!--
+            -->
+                    <li><a href="#">Zone géographique</a></li>
+                    <!--
+            -->
+                    <li><a href="#">Forum</a></li>
+                    <!--
+            -->
+                    <li><a href="#">Contact</a></li>
+                </ul>
+
+            </div>
+        </header>
+        <div id="buffer"> </div>
