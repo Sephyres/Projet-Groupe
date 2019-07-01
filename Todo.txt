@@ -1,0 +1,24 @@
+Cahier des charges
+
+Maquette + Diagramme utilisation + Diagramme de flux
+
+Dictionnaire
+Diagramme classe + DB
+
+MLD
+MCD
+
+
+
+
+
+
+
+Points importants : 
+Githhub
+Agile Merise UML
+Responsive
+Menu de navigation
+Formulaire de connexion et de contact avec controle saisi et validation
+Forum
+Cookies RGPD+read ?

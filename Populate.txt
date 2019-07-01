@@ -1,0 +1,29 @@
+('Cloud', 'Strife', 'Nibelheim', '0123456789'), 
+('Tifa', 'Lockhart', 'Nibelheim', '1230456789'), 
+('Aerith', 'Gainsborough', 'Midgard', '1234560789'), 
+('Yuffie', 'Kisaragi', 'Wutai', '1234567890'), 
+('Vincent', 'Valentine', 'Midgard', '0987654321'), 
+('Red', 'XIII', 'Cosmos Canyon', '9870654321'), 
+('Cait', 'Sith', 'Gold Soccer', '9876540321'), 
+('Cid', 'Highwind', 'Rocket Village', '9876543210'), 
+('Barret', 'Wallace', 'Corel', '0147258369');
+
+('Gatherer', 1, 60),
+('Crafter', 2, 120),
+('Melee', 3, 180),
+('Ranged', 4, 360),
+('Heal', 6, 720),
+('Tank', 5, 540),
+('Caster', 4, 360);
+
+('Potion', 'Restores HP by 100'), 
+('Ether', 'Restores MP by 100'), 
+('Remedy', 'Cures abnormal statuses'), 
+('Elixir', 'Fully restores HP/MP'), 
+('Phoenix Down', 'Restores life'), 
+('Tent', 'Restores ally's max HP/MP');
+
+('Shinra CORP', 'Midgard', '0123456789'),
+('Wutaï Village', 'Wutaï', '0132456789'),
+('Gold Soccer', 'Corel Desert', '0777777777'),
+('Ancient City', 'Ancient Forest', '0123546789');
