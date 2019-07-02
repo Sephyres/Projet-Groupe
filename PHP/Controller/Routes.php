@@ -49,6 +49,7 @@ if (isset($_GET['action'])) {
         {
             afficherPage(adresseRoot . 'PHP/View/', 'Inscription.php', 'Inscription');
         }
+        //Cette action montrera le forum du pauvre, avec les commentaires postés, et permettra d'en ajouter un si l'utilisateur est log, en passant par Ajax
         case 'forum':
         {
             afficherPage(adresseRoot . 'PHP/View/', 'Forum.php', 'Forum');
@@ -64,9 +65,8 @@ if (isset($_GET['action'])) {
             afficherPage(adresseRoot . 'PHP/View/', 'FormMdpOublie.php', 'Mot de passe oublié');
             break;
         }
-        case 'ajouterCommentaire':
-        case 'modifierCommentaire':
-        case 'supprimerCommentaire':
+        //Cette action montrera les commentaires pour l'article fourni en GET, et permettra d'en ajouter un si l'utilisateur est log, en passant par Ajax
+        case 'afficherCommentaires':
         {
             afficherPage(adresseRoot . 'PHP/View/', 'CommentaireAction.php', '');
             break;
