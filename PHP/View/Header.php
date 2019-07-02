@@ -43,7 +43,7 @@
                 <ul id="nav">
                     <!--
             -->
-                    <li><a href="#">Accueil</a></li>
+                    <li><a href="/Projet-Groupe/">Accueil</a></li>
                     <!--
             -->
                     <li><a href="#">Les opérations</a></li>

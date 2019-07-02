@@ -34,6 +34,7 @@ if (isset($_GET['action'])) {
         case 'connect':
         {
             afficherPage(adresseRoot . 'PHP/View/', 'Connexion.php', 'Connexion');
+            break;
         }
         case 'deconnexion':
         {
@@ -48,6 +49,7 @@ if (isset($_GET['action'])) {
         case 'inscript':
         {
             afficherPage(adresseRoot . 'PHP/View/', 'Inscription.php', 'Inscription');
+            break;
         }
         //Cette action montrera le forum du pauvre, avec les commentaires postés, et permettra d'en ajouter un si l'utilisateur est log, en passant par Ajax
         case 'forum':
@@ -86,5 +88,5 @@ if (isset($_GET['action'])) {
             break;
         }
     }} else { // Sinon, on affiche la page principale du site
-    afficherPage(adresseRoot . 'PHP/View/', 'Main.php', "Page Principale");
+    afficherPage(adresseRoot . 'PHP/View/', 'debug.php', "Debug");
 }
