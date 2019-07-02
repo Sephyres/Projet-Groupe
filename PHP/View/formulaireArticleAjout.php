@@ -1,7 +1,7 @@
 <div id="DivSousTitre">
 	<h5>Ajouter un nouvel article</h5>
 </div>
-<form id="formulaire" method="post" action="/PHP/View/ArticleAjout.php">
+<form id="formulaire" method="post" action="/PHP/View/ArticlesAjout.php">
     <!-- Quand le formulaire sera soumit par clic sur le bouton, les informations qu il contient seront stockées dans la variable $_POST, parce que la methode post a été sélectionnée -->
 	Titre :<br>
 	<input type="text" name="titre" ><br><br> 
