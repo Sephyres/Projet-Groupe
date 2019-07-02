@@ -3,16 +3,22 @@ header{
     display:flex;
     flex-direction: column;
     background-color: lightblue;
-    width: 100vw;
+    width: 80vw;
     align-items: center;
+    justify-items: center;
+    padding:0.5vw;
 
 }
 
 #login{
+    min-height: 100%;
     position:absolute;
-    top:0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
     right:0vw;
-    
+    top:0;
+    min-width: 5vw;
     font-size: 1vw;
     background-color:lightgray;
 }
@@ -28,8 +34,6 @@ header{
 }
 
 #barre{
-    position:fixed;
-    top:2vw;
     display: flex;
     text-align: center;
 
@@ -47,10 +51,11 @@ header{
 #nav li {
 	display: inline;
     list-style: none;
+    padding:0.2vw;
 }
 
 #buffer{
-    height: 5vw;
+    height: 8vw;
 }
 body {
     display: flex;
@@ -76,6 +81,7 @@ footer{
 }
 .spansocial {
     margin:0.5vw;
+    padding:0.2vw;
 }
 /* #cont{
     display:1;

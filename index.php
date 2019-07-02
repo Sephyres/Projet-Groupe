@@ -2,7 +2,7 @@
 // Le fichier Route permet de gérer toutes les ouvertures de pages
 
 //on definit les constantes qui permet de definir les chemins
-if (!class_exists("Parametre")) require $_SERVER["DOCUMENT_ROOT"]."/Site/PHP/Controller/Parametre.class.php";
+if (!class_exists("Parametre")) require $_SERVER["DOCUMENT_ROOT"]."/Projet-Groupe/PHP/Controller/Parametre.class.php";
 Parametre::init();
 Define("serverRoot", Parametre::getServerRoot());
 Define("adresseRoot", $_SERVER['DOCUMENT_ROOT'] . Parametre::getAdresseRoot());
