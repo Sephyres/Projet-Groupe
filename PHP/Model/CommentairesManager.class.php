@@ -9,10 +9,9 @@ class CommentairesManager
     {
         $db = DbConnect::getDb(); // Instance de PDO.
         // Pr�paration de la requ�te d'insertion.
-        $q = $db->prepare('INSERT INTO Commentaires (dateCommentaire, contenu, idUtilisateur, idArticle) VALUES (:dateCommentaire, :contenu, :idUtilisateur, :idArticle)');
+        $q = $db->prepare('INSERT INTO Commentaires (dateCommentaire, contenu, idUtilisateur, idArticle) VALUES (NOW(), :contenu, :idUtilisateur, :idArticle)');
 
         // Assignation des valeurs pour le nom, le pr�nom.
-        $q->bindValue(':dateCommentaire', $varobject->getDateCommentaire());
         $q->bindValue(':contenu', $varobject->getContenu());
         $q->bindValue(':idUtilisateur', $varobject->getIdUtilisateur());
         $q->bindValue(':idArticle', $varobject->getIdArticle());

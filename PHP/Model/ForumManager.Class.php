@@ -5,9 +5,8 @@ class ForumManager
     {
         $db = DbConnect::getDb(); // Instance de PDO.
         // Pr�paration de la requ�te d'insertion.
-        $q = $db->prepare('INSERT INTO forum (datePost, contenu, idUtilisateur) VALUES(:datePost, :contenu, :idUtilisateur)');
+        $q = $db->prepare('INSERT INTO forum (datePost, contenu, idUtilisateur) VALUES(NOW(), :contenu, :idUtilisateur)');
         // Assignation des valeurs pour le nom, le pr�nom.
-        $q->bindValue(':datePost', $forum->getDatePost());
         $q->bindValue(':contenu', $forum->getContenu());
         $q->bindValue(':idUtilisateur', $forum->getIdUtilisateur());
     

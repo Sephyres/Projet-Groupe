@@ -1,7 +1,10 @@
 ﻿<?php
-include "header.php";
-$p = new Articles(["titre"=>$_POST["titre"],"contenu"=>$_POST["contenu"],"date"=>$_POST["NOW()"]]);
+if (isset($edit))
+    $date = $edit->getDate();
+else {
+    $date = "NOW()";
+    echo "Nope";
+}
+$p = new Articles(["titre" => $_POST["titre"], "contenu" => $_POST["contenu"], "dateArticle" => $date]);
 ArticlesManager::add($p);
-header ("location:Liste.php");
-
-?>
+//header("location:Index.php");

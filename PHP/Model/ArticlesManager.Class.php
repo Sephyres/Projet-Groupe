@@ -9,23 +9,18 @@ class ArticlesManager
     {
         $db = DbConnect::getDb(); // Instance de PDO.
         // Pr�paration de la requ�te d'insertion.
-        $q = $db->prepare('INSERT INTO Articles (titre, contenu, dateArticle) VALUES (:titre, :contenu, :dateArticle)');
+        $q = $db->prepare('INSERT INTO Articles (titre, contenu, dateArticle) VALUES (:titre, :contenu, NOW())');
         //$q = $db->prepare('INSERT INTO articles (titre, contenu, dateArticle) VALUES("1", "2", "2016-06-01")');
 
 
-       
+        var_dump($varobject);
+
         // Assignation des valeurs pour le nom, le pr�nom.
         $q->bindValue(':titre', $varobject->getTitre());
         $q->bindValue(':contenu', $varobject->getContenu());
-        $q->bindValue(':dateArticle', $varobject->getDateArticle());
 
         // Ex�cution de la requ�te.
         $return = $q->execute();
-        echo $varobject->getTitre();
-        echo $varobject->getContenu();
-        echo $varobject->getDateArticle();
-        var_dump($q);
-        var_dump($return);
     }
 
     public static function delete(Articles $varobject)
