@@ -6,14 +6,13 @@ class UtilisateursManager
     {
         $db = DbConnect::getDb(); // Instance de PDO.
         // Pr�paration de la requ�te d'insertion.
-        $q = $db->prepare('INSERT INTO utilisateurs (login, mdp, mail, nom, prenom, role, pseudo) VALUES(:login, :mdp, :mail, :nom, :prenom, :role, :pseudo)');
+        $q = $db->prepare('INSERT INTO utilisateurs (login, mdp, mail, nom, prenom, role, pseudo) VALUES(:login, :mdp, :mail, :nom, :prenom, 1, :pseudo)');
         // Assignation des valeurs pour le nom, le pr�nom.
         $q->bindValue(':login', $utilisateur->getLogin());
         $q->bindValue(':mdp', $utilisateur->getMdp());
         $q->bindValue(':mail', $utilisateur->getMail());
         $q->bindValue(':nom', $utilisateur->getNom());
         $q->bindValue(':prenom', $utilisateur->getPrenom());
-        $q->bindValue(':role', $utilisateur->getRole());
         $q->bindValue(':pseudo', $utilisateur->getPseudo());
     
         // Ex�cution de la requ�te.

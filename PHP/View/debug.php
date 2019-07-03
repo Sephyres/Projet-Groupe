@@ -1,9 +1,9 @@
 Debug mode : <br />
 
-<a href="?action=connexion">Connexion</a> <br/>
 <a href="?action=main">main</a> <br/>
-<a href="?action=connexion">connexion</a> <br/>
+<a href="?action=connexion">Connexion</a> <br/>
 <a href="?action=connect">connect</a> <br/>
+<a href="?action=deconnexion">Deconnexion</a> <br/>
 <a href="?action=inscription">inscription</a> <br/>
 <a href="?action=inscript">inscript</a> <br/>
 <a href="?action=contact">contact</a> <br/>

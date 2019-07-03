@@ -67,6 +67,11 @@ if (isset($_GET['action'])) {
             afficherPage(adresseRoot . 'PHP/View/', 'FormMdpOublie.php', 'Mot de passe oublié');
             break;
         }
+        case 'mdpOublieChange':
+        {
+            afficherPage(adresseRoot . 'PHP/View/', 'PHPMdpOublie.php', 'Mot de passe oublié');
+            break;
+        }
         //Cette action montrera les commentaires pour l'article fourni en GET, et permettra d'en ajouter un si l'utilisateur est log, en passant par Ajax
         case 'afficherCommentaires':
         {
