@@ -1,63 +1,66 @@
-header{
-    position:fixed;
-    display:flex;
+header {
+    position: fixed;
+    display: flex;
     flex-direction: column;
     background-color: lightblue;
     width: 80vw;
     align-items: center;
     justify-items: center;
-    padding:0.5vw;
+    padding: 0.5vw;
 
 }
 
-#login{
+#login {
     min-height: 100%;
-    position:absolute;
-    display:flex;
+    position: absolute;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    right:0vw;
-    top:0;
+    right: 0vw;
+    top: 0;
     min-width: 5vw;
     font-size: 1vw;
-    background-color:lightgray;
+    background-color: lightgray;
 }
 
-#log{
-    display:flex;
+#log {
+    display: flex;
     flex-direction: row;
 }
 
-#titre{
+#titre {
     font-size: 2vw;
-    display:5
+    display: 5
 }
 
-#barre{
+#barre {
     display: flex;
     text-align: center;
 
 
 }
+
 #nav {
-/*     padding: 0; margin: 0; */
+    /*     padding: 0; margin: 0; */
     background-color: rgb(183, 243, 124);
     display: flex;
-     width:40vw; 
-   justify-content: space-around;
+    width: 40vw;
+    justify-content: space-around;
 
 
 }
+
 #nav li {
-	display: inline;
+    display: inline;
     list-style: none;
-    padding:0.2vw;
+    padding: 0.2vw;
 }
 
-#buffer{
+#buffer {
     height: 8vw;
 }
+
 body {
     display: flex;
     flex-flow: column nowrap;
@@ -65,6 +68,25 @@ body {
 
 }
 
+#formSignIn {
+    display: flex;
+    flex-direction: column;
+}
+
+.formSignInLine {
+    display: flex;
+    margin: 0.3vw;
+    justify-content: center;
+    align-items: flex;
+    
+}
+
+.formSignInCase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:10vw;
+}
 
 #contener {
     width: 80vw;
@@ -73,17 +95,20 @@ body {
     align-items: center;
 }
 
-footer{
-     background-color: rgb(183, 243, 124);;
-     display:flex;
-     flex-direction: row;
-     justify-items: center;
-     margin:1vw;
+footer {
+    background-color: rgb(183, 243, 124);
+    ;
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    margin: 1vw;
 }
+
 .spansocial {
-    margin:0.5vw;
-    padding:0.2vw;
+    margin: 0.5vw;
+    padding: 0.2vw;
 }
+
 /* #cont{
     display:1;
 } */
@@ -93,5 +118,3 @@ footer{
     display:1;
     background-color:rgb(138, 73, 73);
 } */
-
-
