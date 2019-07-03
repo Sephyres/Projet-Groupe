@@ -1,27 +1,31 @@
 ﻿<?php
 if (isset($_POST["date"]))
     $date = $_POST["date"];
-    else {
+else {
     $date = "NOW()";
-    }
+}
 
 switch ($_GET["action"]) {
 
-    case 'ajouterArticle':
+    case 'ajtArticle':
         $p = new Articles(["titre" => $_POST["titre"], "contenu" => $_POST["contenu"], "dateArticle" => $date]);
         ArticlesManager::add($p);
+        header("location:Index.php");
         break;
 
-    case "modifierArticle":
-        $p = new Articles(["idArticle" => $_POST["idArticle"], ["titre" => $_POST["titre"], "contenu" => $_POST["contenu"], "dateArticle" => $date]]);
+    case "modifArticle":
+        $_POST["idArticle"] += 0;
+        $p = new Articles(["idArticle" => $_POST["idArticle"], "titre" => $_POST["titre"], "contenu" => $_POST["contenu"], "dateArticle" => $date]);
         ArticlesManager::update($p);
+        header("location:Index.php");
         break;
 
 
 
-    case "supprimerArticle":
+    case "supprArticle":
         $p = ArticlesManager::getById($_POST["idArticle"]);
         ArticlesManager::delete($p);
+        header("location:Index.php");
         break;
 }
 

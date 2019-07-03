@@ -1,7 +1,7 @@
 <?php
 
-if (isset($GET["idArticle"]))
-$edit = ArticlesManager::getById($GET["idArticle"]);
+if (isset($_GET["idArticle"]))
+$edit = ArticlesManager::getById($_GET["idArticle"]);
 
 switch ($_GET["action"]) {
 	case 'ajouterArticle':
@@ -37,7 +37,7 @@ switch ($_GET["action"]) {
 		Titre :<br>
 		<input type="text" name="titre" value="' . $edit->getTitre() . '"><br><br>
 		Contenu : <br>
-		<textarea cols="150" rows="75" name="contenu" value="' . $edit->getContenu() . '"></textarea><br><br>
+		<textarea cols="150" rows="75" name="contenu">' . $edit->getContenu() . '</textarea><br><br>
 	
 	
 		<input type="submit" value="valider" />

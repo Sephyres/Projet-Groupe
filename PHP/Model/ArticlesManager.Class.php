@@ -25,18 +25,17 @@ class ArticlesManager
     {
         $db = DbConnect::getDb(); // Instance de PDO.
         // Ex�cute une requ�te de type DELETE.
-        $db->exec('DELETE FROM articles WHERE idArticle = ' . $varobject->getIdArticle());
+
+        $res = $db->exec('DELETE FROM articles WHERE idArticle = ' . $varobject->getIdArticle());
+        
     }
 
     public static function getById($id)
     {
         $db = DbConnect::getDb(); // Instance de PDO.
         // Ex�cute une requ�te de type SELECT avec une clause WHERE, et retourne un objet !NomClasse!.
-        $id = (int) $id;
-
         $q = $db->query('SELECT idArticle, titre, contenu, dateArticle FROM articles WHERE idArticle = ' . $id);
         $donnees = $q->fetch(PDO::FETCH_ASSOC);
-
         return new Articles($donnees);
     }
 
