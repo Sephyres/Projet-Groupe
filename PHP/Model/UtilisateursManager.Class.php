@@ -33,6 +33,22 @@ class UtilisateursManager
         $donnees = $q->fetch(PDO::FETCH_ASSOC);
         return new Utilisateurs($donnees);
     }
+    static public function getByPseudo($pseudo) {
+		$db = DbConnect::getDb (); // Instance de PDO.
+		// Exécute une requête de type SELECT avec une clause WHERE, et retourne un objet Personne
+		$q = $db->prepare ( 'SELECT IdUtilisateur, login, mdp, mail, nom, prenom, role, pseudo FROM utilisateurs WHERE pseudo = :pseudo');
+		
+		// Assignation des valeurs .
+		$q->bindValue ( ':pseudo', $pseudo );
+		$q->execute ();
+		$donnees = $q->fetch ( PDO::FETCH_ASSOC );
+		$q->CloseCursor ();
+		if ($donnees == false) { // Si l'utilisateur n'existe pas, on renvoi un objet vide
+			return new Utilisateurs();
+		} else {
+			return new Utilisateurs($donnees);
+		}
+    }
     public static function getList()
     {
         $db = DbConnect::getDb(); // Instance de PDO.
