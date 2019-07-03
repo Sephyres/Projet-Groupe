@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <?php
 
@@ -32,7 +33,15 @@
             <div id="log">
 
                 <div id="titre">Les débarquements durant la seconde guerre mondial</div>
-                <div id=login>Login</div>
+                <div id=login>
+                    <?php
+                    if (isset($_SESSION['login'])) {
+                        echo $_SESSION['login'] . "<br>";
+                        echo '<small><a href="?action=deconnexion">Deconnexion</a></small>';
+                    } else
+                        echo '<small><a href="?action=connexion">Connexion</a></small>';
+                    ?>
+                </div>
 
             </div>
 

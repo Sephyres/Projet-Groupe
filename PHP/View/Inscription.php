@@ -49,7 +49,6 @@ else
         $_SESSION['login'] = $nouvelUtilisateur->getLogin();
         $_SESSION['id'] = $nouvelUtilisateur->getIdUtilisateur();
         $_SESSION['role'] = $nouvelUtilisateur->getRole();
-        var_dump($nouvelUtilisateur);
         header("refresh:3;url=index.php?action=forum");
     }
     else // on affiche les erreurs

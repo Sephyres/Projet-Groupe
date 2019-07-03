@@ -13,8 +13,6 @@ class ArticlesManager
         //$q = $db->prepare('INSERT INTO articles (titre, contenu, dateArticle) VALUES("1", "2", "2016-06-01")');
 
 
-        var_dump($varobject);
-
         // Assignation des valeurs pour le nom, le pr�nom.
         $q->bindValue(':titre', $varobject->getTitre());
         $q->bindValue(':contenu', $varobject->getContenu());
