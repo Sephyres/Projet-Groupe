@@ -1,10 +1,10 @@
 <form method="post" action="<?php echo serverRoot; ?>?action=connect">
     <label for="pseudo">Pseudo :</label>
-    <input type="text" name="pseudo" id="pseudo">
+    <input type="text" name="pseudo" id="pseudo" autofocus required>
     <label for="mdp">Mot de passe :</label>
-    <input type="password" name="mdp" id="mdp">
+    <input type="password" name="mdp" id="mdp" required>
 
-    <input type="submit" value="Valider">
+    <input type="submit" value="Connexion">
 </form>
 
 <!-- <form method="post" action="<?php echo serverRoot; ?>?action=mdpOublie">
@@ -12,6 +12,6 @@
 </form>
  -->
 
-<button><a href="/Site/?action=mdpOublie" style="text-decoration:none;color:black">Mot de passe oublié ?</a></button>
+<button><a class="noDeco" href="/Site/?action=mdpOublie">Mot de passe oublié ?</a></button>
 
-<a href="<?php echo serverRoot; ?>?action=inscription">Pas encore inscrit ?</a>
+<p>Pas encore inscrit? <a id="lienCreerCompte" href="<?php echo serverRoot; ?>?action=inscription">Créez un compte.</a></p>

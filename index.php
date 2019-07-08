@@ -2,7 +2,7 @@
 // Le fichier Route permet de gérer toutes les ouvertures de pages
 
 //on definit les constantes qui permet de definir les chemins
-if (!class_exists("Parametre")) require $_SERVER["DOCUMENT_ROOT"]."/Projet-Groupe/PHP/Controller/Parametre.class.php";
+if (!class_exists("Parametre")) require $_SERVER["DOCUMENT_ROOT"]."/Site/PHP/Controller/Parametre.class.php";
 Parametre::init();
 Define("serverRoot", Parametre::getServerRoot());
 Define("adresseRoot", $_SERVER['DOCUMENT_ROOT'] . Parametre::getAdresseRoot());
@@ -57,6 +57,13 @@ if (isset($_GET['action'])) {
             afficherPage(adresseRoot . 'PHP/View/', 'Forum.php', 'Forum');
             break;
         }
+        case 'ajtCommentaireForum':
+        case 'modifCommentaireForum':
+        case 'supprCommentaireForum':
+        {
+            afficherPage(adresseRoot . 'PHP/View/', 'ForumAction.php', 'Forum');
+            break;
+        }
         case 'contact':
         {
             afficherPage(adresseRoot . 'PHP/View/', 'FormContact.php', 'Contact');
@@ -67,15 +74,11 @@ if (isset($_GET['action'])) {
             afficherPage(adresseRoot . 'PHP/View/', 'FormMdpOublie.php', 'Mot de passe oublié');
             break;
         }
-        case 'mdpOublieChange':
+        case 'ajtCommentaireArticle':
+        case 'modifCommentaireArticle':
+        case 'supprCommentaireArticle':
         {
-            afficherPage(adresseRoot . 'PHP/View/', 'PHPMdpOublie.php', 'Mot de passe oublié');
-            break;
-        }
-        //Cette action montrera les commentaires pour l'article fourni en GET, et permettra d'en ajouter un si l'utilisateur est log, en passant par Ajax
-        case 'afficherCommentaires':
-        {
-            afficherPage(adresseRoot . 'PHP/View/', 'CommentaireAction.php', '');
+            afficherPage(adresseRoot . 'PHP/View/', 'CommentaireAction.php', 'Forum');
             break;
         }
         case 'ajouterArticle':
@@ -89,7 +92,7 @@ if (isset($_GET['action'])) {
         case 'modifArticle':
         case 'supprArticle':
         {
-            afficherPage(adresseRoot . 'PHP/View/', 'ArticleAjout.php', "Page Principale");
+            afficherPage(adresseRoot . 'PHP/View/', 'ArticleAction.php', "Page Principale");
             break;
         }
     }} else { // Sinon, on affiche la page principale du site

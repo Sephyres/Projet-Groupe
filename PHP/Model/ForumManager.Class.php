@@ -32,7 +32,7 @@ class ForumManager
     {
         $db = DbConnect::getDb(); // Instance de PDO.
         // Retourne la liste de tous les utilisateurs.
-        $q = $db->query('SELECT idForum, datePost, contenu, idUtilisateur FROM forum ORDER BY datePost');
+        $q = $db->query('SELECT idForum, datePost, contenu, idUtilisateur FROM forum ORDER BY datePost DESC');
         if ($donnees = $q->fetch(PDO::FETCH_ASSOC)) {//test si la requête renvoi des données
             do {
                 $forums[] = new Forum($donnees);
@@ -54,6 +54,6 @@ class ForumManager
         $q->bindValue(':idUtilisateur', $forum->getIdUtilisateur());
 
         // Ex�cution de la requ�te.
-        $res = $q->execute();
+        $q->execute();
     }
 }

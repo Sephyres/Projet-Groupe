@@ -12,30 +12,32 @@ class ArticlesManager
         $q = $db->prepare('INSERT INTO Articles (titre, contenu, dateArticle) VALUES (:titre, :contenu, NOW())');
         //$q = $db->prepare('INSERT INTO articles (titre, contenu, dateArticle) VALUES("1", "2", "2016-06-01")');
 
+        var_dump($varobject);
 
         // Assignation des valeurs pour le nom, le pr�nom.
         $q->bindValue(':titre', $varobject->getTitre());
         $q->bindValue(':contenu', $varobject->getContenu());
 
         // Ex�cution de la requ�te.
-        $return = $q->execute();
+        $q->execute();
     }
 
     public static function delete(Articles $varobject)
     {
         $db = DbConnect::getDb(); // Instance de PDO.
         // Ex�cute une requ�te de type DELETE.
-
-        $res = $db->exec('DELETE FROM articles WHERE idArticle = ' . $varobject->getIdArticle());
-        
+        $db->exec('DELETE FROM articles WHERE idArticle = ' . $varobject->getIdArticle());
     }
 
     public static function getById($id)
     {
         $db = DbConnect::getDb(); // Instance de PDO.
         // Ex�cute une requ�te de type SELECT avec une clause WHERE, et retourne un objet !NomClasse!.
+        $id = (int) $id;
+
         $q = $db->query('SELECT idArticle, titre, contenu, dateArticle FROM articles WHERE idArticle = ' . $id);
         $donnees = $q->fetch(PDO::FETCH_ASSOC);
+
         return new Articles($donnees);
     }
 
@@ -44,7 +46,7 @@ class ArticlesManager
         $db = DbConnect::getDb(); // Instance de PDO.
         // Retourne la liste de tous les !NomTable!.
 
-        $q = $db->query('SELECT idArticle, titre, contenu, dateArticle FROM articles ORDER BY dateArticle');
+        $q = $db->query('SELECT idArticle, titre, contenu, dateArticle FROM articles ORDER BY dateArticle DESC');
 
         if ($donnees = $q->fetch(PDO::FETCH_ASSOC)) { //test si la requête renvoi des données
             do {
@@ -69,6 +71,6 @@ class ArticlesManager
         $q->bindValue(':dateArticle', $varobject->getDateArticle());
 
         // Ex�cution de la requ�te.
-        $res = $q->execute();
+        $q->execute();
     }
 }

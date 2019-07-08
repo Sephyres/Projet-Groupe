@@ -1,63 +1,56 @@
-header {
-    position: fixed;
-    display: flex;
+header{
+    position:fixed;
+    display:flex;
     flex-direction: column;
     background-color: lightblue;
     width: 80vw;
     align-items: center;
     justify-items: center;
-    padding: 0.5vw;
-
+    padding:0.5vw;
 }
 
-#login {
+#login{
     min-height: 100%;
-    position: absolute;
-    display: flex;
+    position:absolute;
+    display:flex;
     flex-direction: column;
+    padding-left: 1vw;
+    padding-right: 1vw;
     justify-content: center;
     align-items: center;
-    right: 0vw;
-    top: 0;
+    right:0vw;
+    top:0;
     min-width: 5vw;
     font-size: 1vw;
     background-color: lightgray;
 }
 
-#log {
-    display: flex;
+#log{
+    display:flex;
     flex-direction: row;
 }
 
-#titre {
+#titre{
     font-size: 2vw;
-    display: 5
+    display:5
 }
 
-#barre {
-    display: flex;
-    text-align: center;
-
-
+ul{
+    padding: 0;
 }
 
 #nav {
-    /*     padding: 0; margin: 0; */
     background-color: rgb(183, 243, 124);
     display: flex;
-    width: 40vw;
     justify-content: space-around;
-
-
 }
 
 #nav li {
-    display: inline;
     list-style: none;
-    padding: 0.2vw;
+    padding: 0.4vw;
 }
 
-#buffer {
+#buffer{
     height: 8vw;
 }
 
@@ -65,27 +58,6 @@ body {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-
-}
-
-#formSignIn {
-    display: flex;
-    flex-direction: column;
-}
-
-.formSignInLine {
-    display: flex;
-    margin: 0.3vw;
-    justify-content: center;
-    align-items: flex;
-    
-}
-
-.formSignInCase {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width:10vw;
 }
 
 #contener {
@@ -95,26 +67,297 @@ body {
     align-items: center;
 }
 
-footer {
+footer{
     background-color: rgb(183, 243, 124);
-    ;
-    display: flex;
+    display:flex;
     flex-direction: row;
     justify-items: center;
     margin: 1vw;
 }
 
 .spansocial {
-    margin: 0.5vw;
-    padding: 0.2vw;
+    margin:0.5vw;
+    padding:0.2vw;
 }
 
 /* #cont{
     display:1;
 } */
 
-
 /* #foot{
     display:1;
     background-color:rgb(138, 73, 73);
 } */
+
+/*------------------------------------------*/
+
+#reseau{
+    margin-top: 0.25vw;
+    margin-bottom: 0.25vw;
+}
+
+.ligne{
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+}
+
+label{
+    min-width: 15vw;
+    max-width: 15vw;
+}
+
+input, label, .boutonVert, .boutonRouge, .oeil, .messageErreur{
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
+}
+
+/*----------------- FORUM ----------------*/
+
+.forumContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 1.5vw;
+    border-radius: 10px;
+    background-color: rgb(221, 221, 221);
+}
+
+#titreForum{
+    background-color: lightblue;
+    box-shadow: 0px 10px 8px rgb(153, 172, 153);
+    border-bottom: 4px solid rgb(183, 243, 124);
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+#formulaireForum{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+
+textarea{
+    background-color: rgb(214, 237, 245);
+    border-bottom: 2px solid rgb(183, 243, 124);
+    box-shadow: 0px 10px 8px rgb(153, 172, 153);
+    border-radius: 10px;
+    margin-top: 2vw;
+    margin-left: 2vw;
+    margin-bottom: 1vw;
+    margin-right: 2vw;
+    width: 80%;
+}
+
+.btn{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btnModifSupr{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.25vw;
+}
+
+.btnSuppr{
+    margin-top: 0.5vw;
+    margin-bottom: 0.25vw;
+    margin-left: 0.25vw;
+    font-weight: bold;
+}
+
+.centrer{
+    margin-bottom: -0.5vw;
+    margin-right: 0.25vw;
+}
+
+.btnSupprAdmin{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5vw;
+    margin-bottom: 0.25vw;
+    font-weight: bold;
+    justify-content: center;
+}
+
+.btnModif{
+    margin-top: 0.5vw;
+    margin-bottom: 0.25vw;
+    margin-right: 0.25vw;
+    font-weight: bold;
+}
+
+#blocCommentaires{
+    margin-top: 3vw;
+    width: 95%;
+}
+
+.commentaire{
+    border-left: 3px solid rgb(183, 243, 124);
+    border-right: 3px solid rgb(183, 243, 124);
+    padding: 0.5vw;
+    margin: 1vw;
+    background-color: rgb(214, 237, 245);
+    box-shadow: 0px 10px 10px rgb(153, 172, 153);
+    border-radius: 10px;
+}
+
+.enteteCommentaire{
+    display: flex;
+    padding-bottom: 0.5vw;
+}
+
+.nomUtilisateur{
+    margin-right: 1vw;
+    border-bottom: 1px dashed rgb(101, 167, 58);
+}
+
+#forumVide{
+    display: flex;
+    justify-content: center;
+    margin-top: 4vw;
+    margin-bottom: 5vw;
+    color: red;
+    font-weight: bold;
+}
+
+/*-------------------------------------------------*/
+
+.noDeco{
+    text-decoration: none;
+    color: black;
+}
+
+.ligneInscrip{
+    display: flex;
+}
+
+.boutonVert, .boutonRouge{
+    margin-left: 26vw;
+    visibility: hidden;
+    position: absolute;
+}
+
+#oeil{
+    margin-left: 23.8vw;
+    margin-top: 0.4vw;
+    visibility: hidden;
+    position: absolute;
+}
+
+.messageErreur{
+    margin-left: 2.5vw;
+    color: rgb(219, 22, 22);
+    font-weight: bold;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+}
+
+.logos{
+    margin-left: 0.25vw;
+    margin-right: 0.25vw;
+    margin-top: 0.25vw;
+    margin-bottom: -0.1vw;
+}
+
+#lienCreerCompte{
+    color: rgb(4, 100, 226);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/*-------------- Articles (page principale) -----------------*/
+
+#aucunArticle{
+    margin: 0.5vw;
+    width: 80vw;
+    text-align: center;
+}
+
+section{
+    background-color: rgb(221, 221, 221);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1.5vw;
+    padding-top: 1.5vw;
+}
+
+article{
+    width: 80%;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    background-color: rgb(214, 237, 245);
+    box-shadow: 0px 10px 10px rgb(153, 172, 153);
+    border-radius: 10px;
+}
+
+p{
+    margin: 2vw;
+}
+
+.titreArticle{
+    text-align: center;
+    background-color: lightblue;
+    box-shadow: 0px 10px 8px rgb(153, 172, 153);
+    border-bottom: 4px solid rgb(183, 243, 124);
+    border-radius: 10px;
+    padding-top: 0.05vw;
+    padding-bottom: 0.05vw;
+    width: 100%;
+}
+
+.titreEtBtn{
+    display: flex;
+}
+
+.btnSupprArticle{
+    position: absolute;
+    margin-left: 60vw;
+    margin-top: 1vw;
+}
+
+.btnModifArticle{
+    position: absolute;
+    margin-left: 57vw;
+    margin-top:  1vw;
+}
+
+.btnNouvelArticle{
+    margin-bottom: 1vw;
+}
+
+.containerCommentairesArticle{
+    background-color: rgb(239, 251, 255);
+}
+
+.CommentairesArticleVide{
+    text-align: center;
+    padding-top: 1vw;
+    padding-bottom: 2vw;
+}
+
+.noComment{
+    margin-bottom: 1vw;
+}
+
+.btnAjouterCommentaireArticle{
+    text-decoration: none;
+    background-color: lightblue;
+    border-bottom: 2.5px solid rgb(183, 243, 124);
+    border-radius: 20px;
+    padding: 0.5vw;
+    font-weight: bold;
+    color: white;
+}

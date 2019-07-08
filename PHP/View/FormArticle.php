@@ -1,118 +1,48 @@
 <?php
+$action = $_GET['action'];
 
-if (isset($_GET["idArticle"]))
-$edit = ArticlesManager::getById($_GET["idArticle"]);
+echo '<div id="DivSousTitre">';
+switch ($action) {
+    case "ajouterArticle":
+        {
+            echo '<div class="ligne"><h3>Créer un nouvel article</h3></div>
+			<form id="formulaire" method="post" action="index.php?action=ajtArticle">';
+            // Quand le formulaire sera soumit par clic sur le bouton, les informations qu il contient seront stockées dans la variable $_POST, parce que la methode post a été sélectionnée
+            break;
+        }
+    case "modifierArticle":
+        {
+            echo '<div class="ligne"><h3>Modifier un article</h3></div>
+			<form id="formulaire" method="post" action="index.php?action=modifArticle">';
+            break;
+        }
+}
+if (isset($_GET['idarticle'])) {
+	$article = ArticlesManager::getById($_GET['idarticle']);
 
-switch ($_GET["action"]) {
-	case 'ajouterArticle':
-		echo '<div id="DivSousTitre">
-		<h5>Ajouter un nouvel article</h5>
-	</div>
-	
-	<form id="formulaire" method="post" action="index.php?action=ajtArticle">
-		<!-- Quand le formulaire sera soumit par clic sur le bouton, les informations qu il contient seront stockées dans la variable $_POST, parce que la methode post a été sélectionnée -->
-		Titre :<br>
-		<input type="text" name="titre"><br><br>
-		Contenu : <br>
-		<textarea cols="150" rows="75" name="contenu" <?php if (isset($_POST["contenu"])) echo "value= " .$_POST["contenu"] ;?></textarea><br><br>
-	
-	
-		<input type="submit" value="valider" />
-		<input type="reset" value="annuler" />
-	
-	
-	</form>
-	';
-		break;
-	
-		case 'modifierArticle':
-		echo '<div id="DivSousTitre">
-		<h5>Modifier article</h5>
-	</div>
-	
-	<form id="formulaire" method="post" action="index.php?action=modifArticle">
-		<!-- Quand le formulaire sera soumit par clic sur le bouton, les informations qu il contient seront stockées dans la variable $_POST, parce que la methode post a été sélectionnée -->
-		<input type="hidden" name="idArticle" value="' . $edit->getIdArticle() . '">
-		<input type="hidden" name="date" value="' . $edit->getDateArticle() . '">
-		Titre :<br>
-		<input type="text" name="titre" value="' . $edit->getTitre() . '"><br><br>
-		Contenu : <br>
-		<textarea cols="150" rows="75" name="contenu">' . $edit->getContenu() . '</textarea><br><br>
-	
-	
-		<input type="submit" value="valider" />
-		<input type="reset" value="annuler" />
-	
-	
-	</form>';
-		break;
-	
-		case 'supprimerArticle':
-		echo 'Êtes vous sûr de bien vouloir supprimer l\'article suivant : ' . $edit->getTitre() . '
-		<form id="formulaire" method="post" action="index.php?action=supprArticle">
-		<input type="hidden" name="idArticle" value="' . $edit->getIdArticle() . '">
-	
-		<input type="submit" value="valider" />
-		<input type="reset" value="annuler" />
-	
-	
-	</form>';
-		break;
-	
-	default:
-		# code...
-		break;
+	var_dump($article); 
 }
 
-/* <div id="DivSousTitre">
-	<h5>Ajouter un nouvel article</h5>
-</div>
-<form id="formulaire" method="post" action="index.php?action=ajtArticle">
-	<!-- Quand le formulaire sera soumit par clic sur le bouton, les informations qu il contient seront stockées dans la variable $_POST, parce que la methode post a été sélectionnée -->
-	Titre :<br>
-	<input type="text" name="titre"><br><br>
-	Contenu : <br>
-	<textarea cols="150" rows="75" name="contenu" <?php if (isset($_POST["contenu"])) echo "value= " .$_POST["contenu"] ;?>></textarea><br><br>
+?> 
+	<input type="hidden" name="idarticle" value="<?php if(isset($article)) echo $article->getIdArticle(); ?>">
 
+	<label for="titreArticle">Titre de l'article</label>
+	<input type="text" name="titreArticle" id="titreArticle" value="<?php if(isset($article)) echo $article->getTitre(); ?>">
 
-	<input type="submit" value="valider" />
-	<input type="reset" value="annuler" />
-
-
+	<label for="contenu">Contenu de l'article</label>
+	<textarea cols="50" rows="20" name="contenu" value="<?php if(isset($article)) echo $article->getContenu() ;?>"></textarea>
+		
+	<?php 
+	switch ($action) {
+		case "ajouterArticle":
+			{
+				echo '<input type="submit" value="Ajouter l\'article">'; break;
+			}
+		case "modifierArticle":
+			{
+				echo '<input type="submit" value="Modifier">'; break;
+			}
+		}
+	?>
+	<input type="reset" value="Annuler" onclick='location.href="index.php?action=main"'></div>
 </form>
-
-<div id="DivSousTitre">
-	<h5>Modifier article</h5>
-</div>
-
-<form id="formulaire" method="post" action="index.php?action=ajtArticle">
-	<!-- Quand le formulaire sera soumit par clic sur le bouton, les informations qu il contient seront stockées dans la variable $_POST, parce que la methode post a été sélectionnée -->
-	Titre :<br>
-	<input type="text" name="titre"><br><br>
-	Contenu : <br>
-	<textarea cols="150" rows="75" name="contenu" <?php if (isset($_POST["contenu"])) echo "value= " .$_POST["contenu"] ;?>></textarea><br><br>
-
-
-	<input type="submit" value="valider" />
-	<input type="reset" value="annuler" />
-
-
-</form>
-
-<div id="DivSousTitre">
-	<h5>Supprimer Article</h5>
-</div>
-
-<form id="formulaire" method="post" action="index.php?action=ajtArticle">
-	<!-- Quand le formulaire sera soumit par clic sur le bouton, les informations qu il contient seront stockées dans la variable $_POST, parce que la methode post a été sélectionnée -->
-	Titre :<br>
-	<input type="text" name="titre"><br><br>
-	Contenu : <br>
-	<textarea cols="150" rows="75" name="contenu" <?php if (isset($_POST["contenu"])) echo "value= " .$_POST["contenu"] ;?>></textarea><br><br>
-
-
-	<input type="submit" value="valider" />
-	<input type="reset" value="annuler" />
-
-
-</form> */

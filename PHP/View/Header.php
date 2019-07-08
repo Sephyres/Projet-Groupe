@@ -31,18 +31,22 @@
     <div id="contener">
         <header>
             <div id="log">
-
-                <div id="titre">Les débarquements durant la seconde guerre mondial</div>
-                <div id=login>
-                    <?php
-                    if (isset($_SESSION['login'])) {
-                        echo $_SESSION['login'] . "<br>";
-                        echo '<small><a href="?action=deconnexion">Deconnexion</a></small>';
-                    } else
-                        echo '<small><a href="?action=connexion">Connexion</a></small>';
-                    ?>
+                <div id="titre">Les débarquements durant la seconde guerre mondiale</div>
+                <div id="login">
+                <?php 
+                    if(isset($_SESSION['id']))
+                    {
+                        echo $_SESSION['pseudo'];
+                        echo '<a class="noDeco" href="'.serverRoot.'?action=deconnexion">
+                                <img src="/Site/IMAGES/signout.png">
+                              </a>';
+                    }
+                    else
+                    {
+                        echo '<a class="noDeco" href="'.serverRoot.'?action=connexion">Login<br><img src="/Site/IMAGES/signin.png"></a>';
+                    }
+                ?>
                 </div>
-
             </div>
 
 
@@ -51,19 +55,19 @@
                 <ul id="nav">
                     <!--
             -->
-                    <li><a href="/Projet-Groupe/">Accueil</a></li>
+                    <li><a class="noDeco" href="<?php echo serverRoot; ?>?action=main">Accueil</a></li>
                     <!--
             -->
-                    <li><a href="#">Les opérations</a></li>
+                    <li><a class="noDeco" href="#">Les opérations</a></li>
                     <!--
             -->
-                    <li><a href="#">Zone géographique</a></li>
+                    <li><a class="noDeco" href="#">Zone géographique</a></li>
                     <!--
             -->
-                    <li><a href="#">Forum</a></li>
+                    <li><a class="noDeco" href="<?php echo serverRoot; ?>?action=forum">Forum</a></li>
                     <!--
             -->
-                    <li><a href="#">Contact</a></li>
+                    <li><a class="noDeco" href="<?php echo serverRoot; ?>?action=contact">Contact</a></li>
                 </ul>
 
             </div>

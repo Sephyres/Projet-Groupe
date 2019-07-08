@@ -77,7 +77,6 @@ class UtilisateursManager
         $q->bindValue(':prenom', $utilisateur->getPrenom());
         $q->bindValue(':role', $utilisateur->getRole());
         $q->bindValue(':pseudo', $utilisateur->getPseudo());
-
         // Ex�cution de la requ�te.
         $res = $q->execute();
     }
