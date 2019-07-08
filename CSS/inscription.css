@@ -1,0 +1,42 @@
+body{
+    text-align: center;
+    /* background-image:url(../IMAGES/plage-debarquement.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%; */ 
+    background-color: lightblue;
+ 
+    
+}
+
+#inscription{
+    font-size: 4vw;
+}
+
+.form{
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: center; 
+    /* margin-right:2vw; */
+}
+
+.intitule {
+display:1;
+width: 8vw;
+flex-direction:column;
+margin-bottom: 1vw;
+
+}
+
+.encadre{
+    display: 1;
+    width: 8vw;
+    flex-direction:column;
+    margin-bottom: 1vw;
+}
+
+.bouton{
+    display: 1;
+    width:2vw;
+    flex-direction: column;
+} 
