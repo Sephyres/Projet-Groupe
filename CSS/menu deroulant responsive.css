@@ -1,0 +1,134 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: verdana, calibri, sans-serif;
+}
+/*********************** MENU *********************/
+nav{
+    width: 90%;
+    background-color: white;
+    display: flex;
+}
+.menumobile{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    border-bottom: 2px solid orange;
+}
+.menu{
+    float: left;
+    position: relative;
+    color: #222538;
+    
+}
+
+.submenu{
+    display: none;
+    color: black;
+    background-color: orange;
+}
+
+nav a{
+    display: inline-block;
+    text-decoration: none;
+}
+
+.entreeSubMenu {
+    padding: 1vw 2vw;
+    font-size: 13px;
+    color: #222538;
+    width: 270px;
+    border-bottom: 1px solid #ccc;
+}
+.menumobileTitre{
+    display: none;
+}
+/******************* MENU HOVER ******************/
+.menu:hover{
+    border-top: 5px solid orange;
+    background-color: rgba(228, 77, 38, 0.15);
+}
+.menu:hover .submenu {
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    padding: 0px;
+    z-index: 1000;
+}
+.entreeSubMenu:hover a{
+    color: #eee;
+    font-weight: bold;
+}
+.entreeSubMenu:hover{
+    background-color: rgba(228, 77, 38, 0.15);
+}
+
+/*************** MENU RESPONSIVE **************/   
+@media screen and (max-width: 780px){
+    nav {
+        width: 100%;
+    }
+    .menumobile{
+        display: block;
+    }
+    .menumobileTitre {
+        display: block;
+        color: black;
+        background-color: orange;
+        text-align: center;
+        width: 100%;
+    }
+    .menu{
+        display: block;
+  
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        transition: visibility 2s, opacity 2s, height 2s linear;
+        width: 100%;
+        justify-content: center;
+    }
+    .menuTitre{
+        flex: 2;
+    }
+    .submenu{
+        flex: 7;
+        display: flex;
+        width: 80%;
+        text-align: center;
+        flex-direction: column;
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        transition: visibility 2s, opacity 2s, height 2s linear;
+    }	
+    .entreeSubMenu{
+        width: 100%;
+        text-align: center;
+    }	
+    
+    /****************** Menu HOVER ***************/
+    .menumobile:hover  {
+        display:flex;
+        flex-direction: column;
+    }
+    .menumobile:hover .menu {
+        display: inline-block;
+        opacity: 1;
+        visibility: visible;
+        height: auto; 
+    }
+
+    .menu:hover .submenu{
+     left: 30vw;
+     top:auto;
+     opacity: 1;
+        visibility: visible;
+        height: auto; 
+    }
+	.submenu:hover .entreeSubMenu{
+        display: block;
+        position: static;
+    }
+}
