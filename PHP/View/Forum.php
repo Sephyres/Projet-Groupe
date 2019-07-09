@@ -13,7 +13,7 @@ else // Sinon (l'utilisateur est connecté), on affiche le forum
         <h3>Forum</h3>
     </div>
     <form id="formulaireForum" method="post" action="index.php?action=ajtCommentaireForum">
-        <textarea name="contenu" placeholder="Ecrivez ici votre commentaire" rows="8" cols="100" required></textarea>
+        <textarea name="contenuCommentaire" placeholder="Ecrivez ici votre commentaire" rows="8" cols="100" required></textarea>
         <input class="btn" type="submit" value="Envoyer">
     </form>
     <div id="blocCommentaires">

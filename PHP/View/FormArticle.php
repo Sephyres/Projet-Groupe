@@ -27,22 +27,23 @@ if (isset($_GET['idarticle'])) {
 	<input type="hidden" name="idarticle" value="<?php if(isset($article)) echo $article->getIdArticle(); ?>">
 
 	<label for="titreArticle">Titre de l'article</label>
-	<input type="text" name="titreArticle" id="titreArticle" value="<?php if(isset($article)) echo $article->getTitre(); ?>">
+	<input type="text" name="titreArticle" id="titreArticle" value="<?php if(isset($article)) echo $article->getTitre(); ?>" required>
 
-	<label for="contenu">Contenu de l'article</label>
-	<textarea cols="50" rows="20" name="contenu" value="<?php if(isset($article)) echo $article->getContenu() ;?>"></textarea>
-		
+	<label for="contenuArticle">Contenu de l'article</label>
+	<textarea cols="50" rows="20" name="contenuArticle" value="<?php if(isset($article)) echo $article->getContenu() ;?>" required ></textarea>
+	<div class="btns">
 	<?php 
 	switch ($action) {
 		case "ajouterArticle":
 			{
-				echo '<input type="submit" value="Ajouter l\'article">'; break;
+				echo '<input class="btnAjouter" type="submit" value="Ajouter l\'article">'; break;
 			}
 		case "modifierArticle":
 			{
-				echo '<input type="submit" value="Modifier">'; break;
+				echo '<input class="btnModifier" type="submit" value="Modifier">'; break;
 			}
 		}
 	?>
 	<input type="reset" value="Annuler" onclick='location.href="index.php?action=main"'></div>
+	</div>
 </form>

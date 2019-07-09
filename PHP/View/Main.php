@@ -10,7 +10,8 @@ $articles = ArticlesManager::getList();
     }
 ?>    
     <?php 
-    // if($articles != null) {}
+    if($articles != null) // Si il y a des articles
+    {
         foreach($articles as $unArticle)
         {
             echo '<article>'; 
@@ -31,18 +32,17 @@ $articles = ArticlesManager::getList();
                 echo '</div>';
                 echo '<div class="contenuArticle">';
                     echo '<p>' . $unArticle->getContenu() . '<p>';
+                    echo '<p class="datePost">article posté le: ' . $unArticle->getDateArticle() . '</p>';
                 echo '</div>';
 
                 echo '<div class="containerCommentairesArticle">';
 
 /*-------------*/
 
-/*$commentaires = CommentairesManager::getList();
-
-//echo 'article->idarticle =' . $unArticle->getIdArticle() . '<br>';
+/*
+    $commentaires = CommentairesManager::getList();
                 foreach($commentaires as $unCommentaire)
                 {
-                  //  echo 'comment->idarticle =' . $unCommentaire->getIdArticle() . '<br>';
                     
                     if($unCommentaire->getIdArticle() == $unArticle->getIdArticle())
                     {
@@ -56,13 +56,17 @@ $articles = ArticlesManager::getList();
                         echo '</div>';
                     }
                 }
-
-
-
                 echo '</div>';
 
 /*------------*/
             echo '</article>';
         }
+    }
+    else 
+    {
+        echo '<div class="ArticlesVide">';
+            echo 'Il n\'y a pas encore d\'article...';
+        echo '<div>';
+    }
     ?>
 </section>

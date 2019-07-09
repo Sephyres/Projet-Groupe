@@ -48,28 +48,44 @@
                 ?>
                 </div>
             </div>
-
-
             <div id="barre">
-
-                <ul id="nav">
-                    <!--
-            -->
-                    <li><a class="noDeco" href="<?php echo serverRoot; ?>?action=main">Accueil</a></li>
-                    <!--
-            -->
-                    <li><a class="noDeco" href="#">Les opérations</a></li>
-                    <!--
-            -->
-                    <li><a class="noDeco" href="#">Zone géographique</a></li>
-                    <!--
-            -->
-                    <li><a class="noDeco" href="<?php echo serverRoot; ?>?action=forum">Forum</a></li>
-                    <!--
-            -->
-                    <li><a class="noDeco" href="<?php echo serverRoot; ?>?action=contact">Contact</a></li>
-                </ul>
-
+                <nav>
+            <div class="menumobile">
+                <div class="menumobileTitre">Menu</div>
+                <div class="menu">
+                    <div class="menuTitre"><a class="noDeco" href="<?php echo serverRoot; ?>?action=main">Accueil</a></div>
+                    <div class="submenu">
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="menuTitre">Les opérations</div>
+                    <div class="submenu">
+                        <div class="entreeSubMenu"><a href="#">Opération Overlord/Neptune</a></div>
+                        <div class="entreeSubMenu"><a href="#">Opération Anvil/Dragoon</a></div>
+                        <div class="entreeSubMenu"><a href="#">Opération Baytown</a></div>
+                        <div class="entreeSubMenu"><a href="#">Opération Torch</a></div>
+                        <div class="entreeSubMenu"><a href="#">Opération Avalanche</a></div>
+                        <div class="entreeSubMenu"><a href="#">Opération Slapstick</a></div>
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="menuTitre">Zone Géographique</div>
+                    <div class="submenu">
+                        <div class="entreeSubMenu"><a href="#">Normandie</a></div>
+                        <div class="entreeSubMenu"><a href="#">Provence</a></div>
+                        <div class="entreeSubMenu"><a href="#">Italie</a></div>
+                        <div class="entreeSubMenu"><a href="#">Afrique du Nord</a></div>
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="menuTitre"><a class="noDeco" href="<?php echo serverRoot; ?>?action=contact">Contact</a></div>
+                </div>
+                <div class="menu">
+                    <div class="menuTitre"><a class="noDeco" href="<?php echo serverRoot; ?>?action=forum">Forum</a></div>
+                </div>
             </div>
-        </header>
-        <div id="buffer"> </div>
+        </nav>
+    </div>
+</header>
+    <div id="buffer"> </div>
+

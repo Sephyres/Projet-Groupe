@@ -149,3 +149,7 @@ function verifConfirmMdp(e)
     }
     verifForm();
 }
+
+/*--------------------------------------------------*/
+/* Cookies */
+
